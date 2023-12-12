@@ -9,7 +9,7 @@ export class IsBookIdValid {
         if (!IsBookIdValid) {
             throw new AppError(404, "Book not found.")
         }
-        next();
+        return next();
     }
 }
 
@@ -20,6 +20,6 @@ export class isBookNameValid {
         if (isBookNameValid) {
             throw new AppError(409, "Book already registered.")
         }
-        next();
+        return next();
     }
 }

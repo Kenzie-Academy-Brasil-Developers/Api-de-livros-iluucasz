@@ -7,7 +7,7 @@ export class IsBookIdValid {
         const IsBookIdValid = booksDatabase.some(book => book.id === Number(request.params.id));
 
         if (!IsBookIdValid) {
-            throw new AppError(404, "Book not found.")
+            throw new AppError(404, "Book not found.");
         }
         return next();
     }
@@ -18,7 +18,7 @@ export class isBookNameValid {
         const isBookNameValid = booksDatabase.some(book => book.name === request.body.name);
 
         if (isBookNameValid) {
-            throw new AppError(409, "Book already registered.")
+            throw new AppError(409, "Book already registered.");
         }
         return next();
     }

@@ -11,11 +11,11 @@ export class BooksServices {
         return findBook;
     }
 
-    static createBook(name: string, pages: number, category?: number) {
+    static createBook(name: string, pages: string, category?: string) {
         const newBook: IBook = {
             id: generateId(),
             name: name,
-            pages: pages,
+            pages: Number(pages),
             category: category,
             createdAt: new Date(),
             updatedAt: new Date(),

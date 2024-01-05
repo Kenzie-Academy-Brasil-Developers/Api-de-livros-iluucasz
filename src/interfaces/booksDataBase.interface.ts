@@ -1,11 +1,7 @@
-export interface IBook {
-    id: number;
-    name: string;
-    pages: number;
-    category?: number;
-    createdAt: Date;
-    updatedAt: Date;
-}
+import { z } from "zod";
+import { BookSchema } from "../schemas/book.schema";
+
+export type IBook = z.infer<typeof BookSchema>
 
 let id = 0;
 

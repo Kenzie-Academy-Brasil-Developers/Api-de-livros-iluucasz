@@ -19,7 +19,7 @@ export class BookValidation {
           request.query = await schemas.query.parseAsync(request.query);
         }
 
-        next();
+        return next();
       } catch (error) {
         if (error instanceof ZodError) {
           return response.status(409).json(error);

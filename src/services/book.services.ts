@@ -2,7 +2,7 @@ import { booksDatabase } from "../database/database";
 import { IBook, generateId } from "../interfaces/booksDataBase.interface";
 
 export class BooksServices {
-    static getBooks(query: string | undefined) {
+    static getBooks(query?: string | undefined) {
         if (query) {
             return booksDatabase.filter(book => book.name.toLowerCase().includes(query.toLowerCase()));
         }
